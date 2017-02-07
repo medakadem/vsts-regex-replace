@@ -7,18 +7,30 @@ Extension to replace content in files based on regex as a build step in VSTS Bui
 
 # Examples
 
-- Update version in AssemblyInfo.cs files:
+- Inject version into AssemblyInfo.cs files:
 
-	Files Mask: `**\AssemblyInfo.cs`
-	Regex: `(?<=\[assembly:\s*Assembly?Version\(["'])(\d+\.){2,3}\d+(?=["']\)\])`
+	- using lookahead\lookbehind option (simpler, but can't use quantifiers in lookahead\lookbehind):
+	
+		Files Mask: `**\AssemblyInfo.cs`
+		
+		Regex: `(?<=Version\(["'])(\d+\.){2,3}(\d+|\*)(?=["']\)\])`
+		
+		Replacement: `$(SemanticVersion)`
 
-	Files Mask: `**\AssemblyInfo.cs`
-	Regex: `(?<=\[assembly:\s*AssemblyFileVersion\(["'])(\d+\.){2,3}\d+(?=["']\)\])`
+	- using groups (more powerful, but more complex):
+	
+		Files Mask: `**\AssemblyInfo.cs`
+		
+		Regex: `(\[assembly: Assembly(File|Informational)?Version\(["'])(\d+\.){2,3}(\d+|\*)?(["']\)])`
+		
+		Replacement: `${1}$(SemanticVersion)${5}`
 
-- Update version in Wix files:
+
+- Inject version into Wix files:
 
 	Files Mask: `**\Product.wxs`
 	Regex: `(?<=\sVersion=["'])(\d+\.){2,3}\d+(?=["'])`
+	Replacement: $(SemanticVersion)
 
 
 # Compatibility
