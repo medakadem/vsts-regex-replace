@@ -32,7 +32,7 @@ Extension to replace content in files based on regex as a build step in VSTS Bui
 	
 	Regex: `(?<=\sVersion=["'])(\d+\.){2,3}\d+(?=["'])`
 	
-	Replacement: $(SemanticVersion)
+	Replacement: `$(SemanticVersion)`
 
 
 
