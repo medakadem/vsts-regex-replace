@@ -28,16 +28,28 @@ function RegexReplaceInFile([string] $file, $Regex, $Replacement) {
 	Write-Host "`n--- Processing file: $file"
 	$content = Get-Content -Path $file
 	
-	$content -match $Regex
-	if ($?) {
-		if ($Replacement) {
-			# Remove Read-Only attribute? attrib -r $file
-
-			$content -replace $Regex, $Replacement | Set-Content $file
-			Write-Host "  replaced"
+	[string[]]$new_content = @()
+	
+	$changed = $false
+	
+	$content | %{
+		if ($_ -match $Regex) {
+			Write-Host "< $_"
+			if ($Replacement) {
+				$changed_line = $_ -replace $Regex, $Replacement
+				Write-Host "> $changed_line"
+				$new_content += $changed_line
+				$changed = $true
+			}
+		} else {
+			if ($Replacement) {
+				$new_content += $_
+			}
 		}
-	} else {
-		Write-Host "  no match"
+	}
+	
+	if ($Replacement -and $changed) {
+		$new_content | Set-Content $file
 	}
 }
 
