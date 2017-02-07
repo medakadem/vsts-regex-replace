@@ -1,0 +1,46 @@
+{
+    "id": "4dadb2da-4192-4a27-bc3e-269ccc841f8c",
+    "name": "ivanboyko.RegexReplace",
+    "friendlyName": "Regex Replace",
+    "description": "Replaces content in files by Regular Expression",
+    "helpMarkDown": "[More Information](https://github.com/IvanBoyko/vsts-regex-replace)",
+    "category": "Utility",
+    "author": "Ivan Boyko",
+    "version": {
+        "Major": 1,
+        "Minor": 0,
+        "Patch": 1
+    },
+    "instanceNameFormat": "Replace $(Regex) in $(FileMask) with $(Replacement)",
+    "inputs": [
+        {
+            "name": "FileMask",
+            "type": "filePath",
+            "label": "File Mask",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "File Mask, for example **\\*.ini"
+        },
+        {
+            "name": "Regex",
+            "type": "string",
+            "label": "Regex",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Regular Expression"
+        },
+        {
+            "name": "Replacement",
+            "type": "string",
+            "label": "Replacement",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Replacement string"
+        }
+    ],
+    "execution": {
+		"PowerShell": {
+			"target": "RegexReplace.ps1"
+        }
+    }
+}
