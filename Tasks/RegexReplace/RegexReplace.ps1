@@ -28,9 +28,8 @@ function RegexReplaceInFile([string] $file, $Regex, $Replacement) {
 	Write-Host "`n--- Processing file: $file"
 	$content = Get-Content -Path $file
 	
-	if ($content -match $Regex) {
-		Write-Host "  found match:"
-		$Matches | FL
+	$content -match $Regex
+	if ($?) {
 		if ($Replacement) {
 			# Remove Read-Only attribute? attrib -r $file
 
@@ -48,5 +47,7 @@ function RegexReplaceInFile([string] $file, $Regex, $Replacement) {
 #
 
 gci -Recurse $FileMask | %{
-	RegexReplaceInFile $_.FullName $Regex $Replacement
+	if (! $_.PSIsContainer) {
+		RegexReplaceInFile $_.FullName $Regex $Replacement
+	}
 }

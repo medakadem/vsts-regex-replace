@@ -18,7 +18,7 @@ Extension to replace content in files based on regex as a build step in VSTS Bui
 - Update version in Wix files:
 
 	Files to update: `**\Product.wxs`
-	Regex: `(?<=<\?define\s+ProductVersion\s*=\s*['"])(\d+\.){2,3}\d+(?=["']\s*\?>)`
+	Regex: `(?<=\sVersion=["'])(\d+\.){2,3}\d+(?=["'])`
 
 
 # Compatibility
