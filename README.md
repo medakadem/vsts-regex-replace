@@ -2,7 +2,7 @@
 
 Extension to replace content in files based on regex as a build step in VSTS Release.
 
-![Logo](https://raw.githubusercontent.com/IvanBoyko/vsts-regex-replace/master/images/icon.png)
+![Logo](https://raw.githubusercontent.com/IvanBoyko/vsts-regex-replace/master/images/icon_64.png)
 
 # Features
 
