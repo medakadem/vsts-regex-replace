@@ -11,9 +11,18 @@ Extension to replace content in files based on regex as a build step in VSTS Rel
 
 # Examples
 
-...
+- Update version in AssemblyInfo.cs files:
 
-...
+	Files to update: `**\AssemblyInfo.cs`
+	Regex: `(?<=\[assembly:\s*Assembly?Version\(["'])(\d+\.){2,3}\d+(?=["']\)\])`
+
+	Files to update: `**\AssemblyInfo.cs`
+	Regex: `(?<=\[assembly:\s*AssemblyFileVersion\(["'])(\d+\.){2,3}\d+(?=["']\)\])`
+
+- Update version in Wix files:
+
+	Files to update: `**\Product.wxs`
+	Regex: `(?<=<\?define\s+ProductVersion\s*=\s*['"])(\d+\.){2,3}\d+(?=["']\s*\?>)`
 
 
 # Compatibility
