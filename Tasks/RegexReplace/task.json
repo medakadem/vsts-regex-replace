@@ -9,9 +9,9 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 1
+        "Patch": 2
     },
-    "instanceNameFormat": "Replace $(Regex) in $(FileMask) with $(Replacement)",
+    "instanceNameFormat": "Regex in $(FileMask)",
     "inputs": [
         {
             "name": "FileMask",

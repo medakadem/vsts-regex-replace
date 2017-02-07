@@ -1,12 +1,8 @@
 # vsts-regex-replace
 
-Extension to replace content in files based on regex as a build step in VSTS Release.
+Extension to replace content in files based on regex as a build step in VSTS Build or Release.
 
 ![Logo](https://raw.githubusercontent.com/IvanBoyko/vsts-regex-replace/master/images/icon_64.png)
-
-# Features
-
-...
 
 
 # Examples
