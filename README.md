@@ -29,8 +29,11 @@ Extension to replace content in files based on regex as a build step in VSTS Bui
 - Inject version into **Wix** files:
 
 	Files Mask: `**\Product.wxs`
+	
 	Regex: `(?<=\sVersion=["'])(\d+\.){2,3}\d+(?=["'])`
+	
 	Replacement: $(SemanticVersion)
+
 
 
 ![Logo](https://raw.githubusercontent.com/IvanBoyko/vsts-regex-replace/master/images/screenshot_example_1.png)
