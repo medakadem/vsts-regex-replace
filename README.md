@@ -9,15 +9,15 @@ Extension to replace content in files based on regex as a build step in VSTS Bui
 
 - Update version in AssemblyInfo.cs files:
 
-	Files to update: `**\AssemblyInfo.cs`
+	Files Mask: `**\AssemblyInfo.cs`
 	Regex: `(?<=\[assembly:\s*Assembly?Version\(["'])(\d+\.){2,3}\d+(?=["']\)\])`
 
-	Files to update: `**\AssemblyInfo.cs`
+	Files Mask: `**\AssemblyInfo.cs`
 	Regex: `(?<=\[assembly:\s*AssemblyFileVersion\(["'])(\d+\.){2,3}\d+(?=["']\)\])`
 
 - Update version in Wix files:
 
-	Files to update: `**\Product.wxs`
+	Files Mask: `**\Product.wxs`
 	Regex: `(?<=\sVersion=["'])(\d+\.){2,3}\d+(?=["'])`
 
 
