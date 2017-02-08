@@ -47,7 +47,9 @@ Extension to replace content in files based on regex as a build step in VSTS Bui
 
 # Support
 
-Extension is open source and free to use, but it's provided AS IS, without any responsibility.
+Extension is open source and free to use.
+But it's provided as is, without any responsibility, and is not guaranteed to work.
+Use at your own risk.
 
 However if you find any issue, feel free to raise it here:
 https://github.com/IvanBoyko/vsts-regex-replace/issues
