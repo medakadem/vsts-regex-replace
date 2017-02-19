@@ -9,7 +9,7 @@
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 6
+        "Patch": 7
     },
     "instanceNameFormat": "Regex in $(FileMask)",
     "inputs": [
@@ -40,7 +40,7 @@
     ],
     "execution": {
 		"PowerShell": {
-			"target": "RegexReplace.ps1"
+			"target": "$(currentDirectory)\\RegexReplace.ps1"
         }
     }
 }
