@@ -49,7 +49,7 @@ function RegexReplaceInFile([string] $file, $Regex, $Replacement) {
 	}
 	
 	if ($Replacement -and $changed) {
-		$new_content | Set-Content $file
+		$new_content | Set-Content $file -Encoding UTF8
 	}
 }
 
