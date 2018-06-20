@@ -1,11 +1,11 @@
 {
 	"manifestVersion": 1,
 	"id": "vsts-regex-replace",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"name": "Regex Replace",
 	"description": "Replaces content in files by Regular Expression",
-	"publisher": "ivanboyko",
-	"public": true,
+	"publisher": "medakadem",
+	"public": false,
 	"targets": [
 		{
 			"id": "Microsoft.VisualStudio.Services"
@@ -33,13 +33,13 @@
 	},
 	"links": {
 		"getstarted": {
-			"uri": "https://github.com/IvanBoyko/vsts-regex-replace"
+			"uri": "https://github.com/medakadem/vsts-regex-replace"
 		},
 		"license": {
-			"uri": "https://github.com/IvanBoyko/vsts-regex-replace/blob/master/LICENSE"
+			"uri": "https://github.com/medakadem/vsts-regex-replace/blob/master/LICENSE"
 		},
 		"support": {
-			"uri": "https://github.com/IvanBoyko/vsts-regex-replace/issues"
+			"uri": "https://github.com/medakadem/vsts-regex-replace/issues"
 		}
 	},
 	"icons": {
@@ -58,10 +58,10 @@
 	],
 	"contributions": [
 		{
-			"id": "ivanboyko.RegexReplace",
-			"name": "Regex Replace",
+			"id": "medakadem.RegexReplace",
+			"name": "Regex Replace UTF8",
 			"type": "ms.vss-distributed-task.task",
-			"description": "Replaces content in files by Regular Expression",
+			"description": "Replaces content in files by Regular Expression UTF8",
 			"targets": [
 				"ms.vss-distributed-task.tasks"
 				],
