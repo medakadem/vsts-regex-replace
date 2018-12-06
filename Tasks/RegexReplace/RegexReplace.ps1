@@ -53,10 +53,23 @@ function RegexReplaceInFile([string] $file, $Regex, $Replacement) {
 	}
 }
 
+function Check-PSVersion {
+    if ([System.IntPtr]::Size -eq 4) {
+        # When equal to 4, then x86
+        Write-Host "Running x86 PowerShell session"
+    }
+    else {
+        # When equal to 8, then x64
+        Write-Host "Running x64 PowerShell session"
+    }
+}
+
 
 #
 # Main programme
 #
+
+Check-PSVersion
 
 gci -Recurse $FileMask | %{
 	if (! $_.PSIsContainer) {

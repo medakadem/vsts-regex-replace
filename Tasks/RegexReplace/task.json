@@ -1,15 +1,23 @@
 {
-    "id": "4dadb2da-4192-4a27-bc3e-269ccc841f8c",
-    "name": "ivanboyko.RegexReplace",
-    "friendlyName": "Regex Replace",
+    "id": "5d6bf72c-4a9a-4ea1-8256-85542f0e8774",
+    "name": "dimakets.RegexReplaceUTF8",
+    "friendlyName": "Regex Replace UTF-8",
     "description": "Replaces content in files by Regular Expression",
-    "helpMarkDown": "[More Information](https://github.com/IvanBoyko/vsts-regex-replace)",
+    "helpMarkDown": "[More Information](https://github.com/IvanBoyko/vsts-regex-replace-utf8)",
     "category": "Utility",
-    "author": "Ivan Boyko",
+    "author": "Dima Kets",
+    "visibility": [
+        "Build",
+        "Release"
+    ],
+    "runsOn": [
+        "Agent",
+        "MachineGroup"
+    ],
     "version": {
         "Major": 1,
-        "Minor": 0,
-        "Patch": 7
+        "Minor": 1,
+        "Patch": 3
     },
     "instanceNameFormat": "Regex in $(FileMask)",
     "inputs": [
@@ -40,7 +48,9 @@
     ],
     "execution": {
 		"PowerShell": {
-			"target": "$(currentDirectory)\\RegexReplace.ps1"
+            "target": "$(currentDirectory)\\RegexReplace.ps1",
+            "argumentFormat": "",
+            "workingDirectory": "$(currentDirectory)"
         }
     }
 }
