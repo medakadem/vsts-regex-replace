@@ -1,17 +1,19 @@
 {
 	"manifestVersion": 1,
 	"id": "vsts-regex-replace-utf8",
-	"version": "1.1.4",
+	"version": "1.5.1",
 	"name": "Regex Replace UTF-8",
 	"description": "Replaces content in files by Regular Expression",
 	"publisher": "dimakets",
-	"categories": ["Azure Repos"],
+	"categories": [
+		"Azure Repos"
+	],
 	"public": false,
 	"targets": [
 		{
 			"id": "Microsoft.VisualStudio.Services"
-			}
-		],
+		}
+	],
 	"scope": [
 		"vso.build",
 		"vso.release"
@@ -45,29 +47,29 @@
 	},
 	"icons": {
 		"default": "images/icon_64.png"
-	 },
+	},
 	"files": [
 		{
-			"path": "Tasks/RegexReplace/RegexReplace.ps1"
+			"path": "Tasks/RegexReplace.ps1"
 		},
 		{
-			"path": "Tasks/RegexReplace/task.json"
+			"path": "Tasks/task.json"
 		},
 		{
-			"path": "Tasks/RegexReplace/icon.png"
+			"path": "Tasks/icon.png"
 		}
 	],
 	"contributions": [
 		{
-			"id": "medakadem.RegexReplace",
+			"id": "dimakets.RegexReplaceUTF8",
 			"name": "Regex Replace UTF8",
 			"type": "ms.vss-distributed-task.task",
 			"description": "Replaces content in files by Regular Expression UTF8",
 			"targets": [
 				"ms.vss-distributed-task.tasks"
-				],
+			],
 			"properties": {
-				"name": "Tasks/RegexReplace"
+				"name": "Tasks"
 			}
 		}
 	]
